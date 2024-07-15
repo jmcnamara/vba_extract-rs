@@ -1,0 +1,14 @@
+[package]
+name = "vba_extract"
+authors = ["John McNamara <jmcnamara@cpan.org>"]
+repository = "https://github.com/jmcnamara/vba_extract-rs"
+description = "Utility to extract a vbaProject.bin binary from an Excel xlsm macro file for insertion into an rust_xlsxwriter file."
+keywords = ["cli", "excel", "xlsx"]
+readme = "README.md"
+license = "MIT OR Apache-2.0"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+clap = { version = "4.5.9", features = ["derive"] }
+zip = {version = "2.1.3", default-features = false, features = ["deflate"]}
