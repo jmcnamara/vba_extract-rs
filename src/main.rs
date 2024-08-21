@@ -25,7 +25,7 @@ signed, it also extracts a `vbaProjectSignature.bin` file."
 )]
 struct Args {
     /// Input Excel xlsm filename.
-    filename_xlsx: String,
+    filename_xlsm: String,
 
     /// Output vba macro filename.
     #[arg(short, long, default_value = "vbaProject.bin")]
@@ -40,7 +40,7 @@ struct Args {
 fn main() {
     // Parse the command line with Clap.
     let args = Args::parse();
-    let xlsm_filename = args.filename_xlsx;
+    let xlsm_filename = args.filename_xlsm;
 
     // Open the Excel xlsm file.
     let xlsm_file = match File::open(&xlsm_filename) {
@@ -105,5 +105,5 @@ fn extract_bin_file(
     // Copy the binary file to the OS.
     copy(&mut file, &mut output_file).unwrap();
 
-    println!("Extracted {output_filename}.");
+    println!("Extracted: {output_filename}");
 }
